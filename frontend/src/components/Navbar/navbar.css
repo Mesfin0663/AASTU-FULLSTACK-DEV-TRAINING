@@ -1,0 +1,11 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+
+}
+.navbar li{
+    display: inline-block;
+    margin-inline: 10px;
+}
