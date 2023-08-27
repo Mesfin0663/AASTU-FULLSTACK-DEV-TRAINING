@@ -8,6 +8,7 @@ function Register() {
     const [email, setEmail] = useState("");
 
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
     const handleNameChange = (e)=>{
       e.preventDefault()
@@ -19,18 +20,41 @@ function Register() {
         console.log(e.target.value);
         setEmail(e.target.value)
       }
+    const handlePasswordChange = (e)=>{
+        e.preventDefault()
+        console.log(e.target.value);
+        setPassword(e.target.value)
+      }
     
+      const handleConfirmPasswordChange = (e)=>{
+        e.preventDefault()
+        console.log(e.target.value);
+        setConfirmPassword(e.target.value)
+      }
     const handleSubmit = async()=>{
+      
+        if(!name || !email || !password){
+            alert("Please Enter all fields")
+            console.log("abort Registration")
+            return ;
+        }
+
+        if(password !== confirmPassword){
+            alert("Password did not match")
+            console.log("abort Registration")
+            return ;
+        }
         console.log(name)
         console.log(email)
-        
         axios
         .post("http://localhost:8080/register", {
-          name: "Mesfin",
-          email: "mesfingirmatwo@gmail.com"
+          name: name,
+          email: email,
+          password: password
         }).then((response) => {
            console.log(response.data)
           });
+          console.log("end of register")
     }
   return (
     <div className='register_container'>
@@ -48,12 +72,12 @@ function Register() {
             </div>
             <div className='field'>
             <label htmlFor="password" className='label'>Enter Your Passowrd: </label>
-           <input className='input_filed' type="password" id='password' placeholder='password' />
+           <input className='input_filed' type="password" id='password' onChange={handlePasswordChange} placeholder='password' />
             </div>
       
             <div className='field'>
             <label htmlFor="password" className='label'>Enter Your Passowrd: </label>
-           <input className='input_filed' type="password" id='password' placeholder='password' />
+           <input className='input_filed' type="password" id='password' onChange={handleConfirmPasswordChange} placeholder='password' />
             </div>
 
              <input type="submit" value="Register" onClick={handleSubmit} />
