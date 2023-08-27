@@ -57,7 +57,7 @@ function Products() {
           {
             loading?<>
             <h1>Loading</h1>
-            </>:<>
+            </>:<div className='product_wrapper'>
              {
             productList.map((product)=>(
                 <div className='prduct_card' >
@@ -68,7 +68,7 @@ function Products() {
 
             ))
            }
-            </>
+            </div>
           }
            
         </div>

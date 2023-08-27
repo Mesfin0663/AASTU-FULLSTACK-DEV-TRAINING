@@ -20,8 +20,8 @@ function Navbar() {
                       </>:<>
                       <li><a className='nav_link' href="/products">Products</a></li>
 
-                      <li><a className='nav_link' href="/login">Login</a></li>
                     <li><a className='nav_link' href="/register">Register</a></li>
+                    <li><a className='nav_link' href="/login">Login</a></li>
 
                       </>
                     }

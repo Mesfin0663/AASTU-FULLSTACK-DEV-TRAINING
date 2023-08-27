@@ -1,5 +1,5 @@
 .prduct_card{
-    max-width: 300px;
+    width: 300px;
     margin: 30px;
 }
 .product_img{
@@ -8,5 +8,11 @@
     /* object-fit: cover; */
 }
 .product_container{
-    display: flex;
+    width: 80% ;
+
+    margin: 0 auto;
+}
+.product_wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
