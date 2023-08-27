@@ -46,6 +46,8 @@ const products = [
 }
 ]
 
+const users = []
+
 app.get('/', (req, res) => {
     res.send('hello from backend')
   })
@@ -55,8 +57,12 @@ app.get('/', (req, res) => {
   })
   app.post('/register', (req, res) => {
     console.log("Register End point reached")
-    console.log(req.body)
+    let user =  req.body;
+   
+    users.push(user);
+    console.log("Registered users",users)
     res.status(200).json({message:"success"})
   })
+  
 //   app.listen(port, console.log(`server running on port ${port}`));
 app.listen(8080,console.log("my server started on port 8080"))
