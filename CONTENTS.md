@@ -6,3 +6,13 @@
   ### fronend
     - Folder and file structure of react
     - besics Routing in react
+    - Displaying local product list on react
+  ### backend
+    - serving hello world
+    - serving product list
+
+# lesson 2
+  ### fronend
+    - Login and Register
+    - react besic state management tools
+    - Fetching product list from backend and display it on the front end
