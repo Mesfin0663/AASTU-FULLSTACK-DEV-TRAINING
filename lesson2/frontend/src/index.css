@@ -2,4 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  --main1: rgb(0, 134, 252);
+  --black1: rgb(27, 26, 26);
+}
+
+body{
+  background: rgb(224, 218, 218) ;
 }

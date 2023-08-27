@@ -1,0 +1,37 @@
+[debug] [2023-08-24T12:12:52.219Z] ----------------------------------------------------------------------
+[debug] [2023-08-24T12:12:52.222Z] Command:       /usr/local/bin/firebase /home/hahu/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase deploy
+[debug] [2023-08-24T12:12:52.222Z] CLI Version:   12.0.0
+[debug] [2023-08-24T12:12:52.222Z] Platform:      linux
+[debug] [2023-08-24T12:12:52.222Z] Node Version:  v16.16.0
+[debug] [2023-08-24T12:12:52.225Z] Time:          Thu Aug 24 2023 15:12:52 GMT+0300 (East Africa Time)
+[debug] [2023-08-24T12:12:52.225Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-24T12:12:52.228Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-08-24T12:12:57.261Z] Error: Timed out.
+    at Timeout._onTimeout (/home/hahu/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/utils.js:253:49)
+    at listOnTimeout (node:internal/timers:559:17)
+    at processTimers (node:internal/timers:502:7)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-08-24T12:13:10.010Z] ----------------------------------------------------------------------
+[debug] [2023-08-24T12:13:10.012Z] Command:       /usr/local/bin/firebase /home/hahu/.cache/firebase/tools/lib/node_modules/firebase-tools/lib/bin/firebase init
+[debug] [2023-08-24T12:13:10.012Z] CLI Version:   12.0.0
+[debug] [2023-08-24T12:13:10.013Z] Platform:      linux
+[debug] [2023-08-24T12:13:10.013Z] Node Version:  v16.16.0
+[debug] [2023-08-24T12:13:10.013Z] Time:          Thu Aug 24 2023 15:13:10 GMT+0300 (East Africa Time)
+[debug] [2023-08-24T12:13:10.013Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-24T12:13:10.016Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-08-24T12:13:10.037Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-24T12:13:10.037Z] > authorizing via signed-in user (mesfingirmatwo@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/hahu/Web Design Tutorial/project/frontend
+
