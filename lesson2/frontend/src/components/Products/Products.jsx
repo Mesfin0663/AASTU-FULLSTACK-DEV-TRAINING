@@ -63,6 +63,7 @@ function Products() {
                 <div className='prduct_card' key={product.id}>
                 <h1>{product.name}</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem facilis animi autem eligendi consectetur, accusamus explicabo odio dignissimos laudantium. Corrupti?</p>
+                 <p>Price: {product.price}</p>
                 <img className='product_img' src={product.image} alt="" />
             </div>
 

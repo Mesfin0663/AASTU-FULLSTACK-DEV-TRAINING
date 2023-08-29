@@ -53,7 +53,11 @@ function Register() {
           password: password
         }).then((response) => {
            console.log(response.data)
-          });
+           alert("You have registered")
+          }).catch(error => {
+            console.log(error);
+            alert(error.message)
+          })
           console.log("end of register")
     }
   return (
