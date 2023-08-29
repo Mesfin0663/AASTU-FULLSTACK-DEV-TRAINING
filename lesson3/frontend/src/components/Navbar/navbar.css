@@ -1,0 +1,29 @@
+.container{
+   
+    /* background-color: rgb(198, 232, 232); */
+
+
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    width: 80%;
+    margin: 0 auto;
+}
+.navbar li{
+    display: inline-block;
+    margin-inline: 10px;
+}
+.navbar a{
+    text-decoration: none;
+    color: var(--main1);
+}
+.nav_logo{
+    font-size: 30px;
+    font-weight: bold;
+}
+.nav_link{
+    font-size: 25px;
+}

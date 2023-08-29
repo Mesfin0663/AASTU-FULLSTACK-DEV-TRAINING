@@ -1,0 +1,18 @@
+.prduct_card{
+    width: 300px;
+    margin: 30px;
+}
+.product_img{
+    width: 223px;
+    height: 223px;
+    /* object-fit: cover; */
+}
+.product_container{
+    width: 80% ;
+
+    margin: 0 auto;
+}
+.product_wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
