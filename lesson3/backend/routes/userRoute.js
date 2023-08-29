@@ -1,4 +1,7 @@
-const express = require('express')
+const express = require('express');
+const asyncHandler = require('express-async-handler')
+const Users = require('../models/Users');
+
 const router = express.Router()
 
 const users = [
@@ -17,38 +20,50 @@ const users = [
   ]
 
 
-router.post('/register', (req, res) => {
-    console.log("Register End point reached")
-    let user = req.body;
-     let password = req.body.password;
-     if(password.length<6){
-      res.status(400).send({message:"Error password length less than 6"})
-     }
-    users.push(user);
-    console.log("Registered users", users)
-    res.status(200).json({ message: "success" })
-  });
+router.post('/register', asyncHandler(async(req, res) => {
+  console.log("Register End point reached")
+  let user = req.body;
+   let password = req.body.password;
+   if(password.length<6){
+    res.status(400).send({message:"Error password length less than 6"})
+   }
+  const userfromdb = await Users.create(user)
+  if(userfromdb){
+      console.log("user created on db")
+      console.log(userfromdb)
+      res.status(200).json({ message: "success" })
+
+  }else{
+    console.log("user not created on db")
+    res.status(400).json({ message: "success" })
+
+  }
+}));
 
   
-  router.post('/login', (req, res) => {
-    console.log("Login End point reached")
-    let userEmail = req.body.email;
-    let userPassword = req.body.password
-    let user = users.find((user)=>user.email == userEmail)
-     if(user){
-      console.log("user Found", user)
-      if(userPassword===user.email){
-        res.status(200).json({ message: "Login success" })
-  
-      }else{
-        res.status(400).json({ message: "Error password doesn't match" })
-  
-      }
-     }else{
-      console.log("user not found")
-      res.status(400).json({ message: "Error user not found" })
-  
-     }
-   
-  });
+  router.post('/login', asyncHandler(
+   async (req, res) => {
+      console.log("Login End point reached")
+      let userEmail = req.body.email;
+      let userPassword = req.body.password
+      let user = await Users.findOne({
+        email: userEmail
+      })
+       if(user){
+        console.log("user Found", user)
+        if(userPassword===user.password){
+          res.status(200).json({ message: "Login success" })
+    
+        }else{
+          res.status(400).json({ message: "Error password doesn't match" })
+    
+        }
+       }else{
+        console.log("user not found")
+        res.status(400).json({ message: "Error user not found" })
+    
+       }
+     
+    }
+  ));
 module.exports = router
