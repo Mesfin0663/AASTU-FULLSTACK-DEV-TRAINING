@@ -15,11 +15,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-  
+    roles:[
+        {
+        type:String,
+        default: "Buyer"
+    }]
 },
 {
   timestamps: true
 }
 )
 
-module.exports = mongoose.model('Note',userSchema)
+module.exports = mongoose.model('User',userSchema)

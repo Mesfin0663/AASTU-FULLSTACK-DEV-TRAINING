@@ -1,0 +1,11 @@
+.cart_item_image{
+    width: 70px;
+    height: 70px;
+}
+.cart-list-container{
+    width: 80%;
+    margin: 0 auto;
+}
+.cart_item{
+    display: flex;
+}

@@ -27,7 +27,9 @@ router.post('/register', asyncHandler(async(req, res) => {
    if(password.length<6){
     res.status(400).send({message:"Error password length less than 6"})
    }
+   user.roles= ["buyer"]
   const userfromdb = await Users.create(user)
+  
   if(userfromdb){
       console.log("user created on db")
       console.log(userfromdb)
@@ -52,7 +54,7 @@ router.post('/register', asyncHandler(async(req, res) => {
        if(user){
         console.log("user Found", user)
         if(userPassword===user.password){
-          res.status(200).json({ message: "Login success" })
+          res.status(200).json({ message: "Login success",user:{username:user.username,email:user.email,roles:user.roles} })
     
         }else{
           res.status(400).json({ message: "Error password doesn't match" })

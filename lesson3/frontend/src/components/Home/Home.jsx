@@ -8,7 +8,7 @@ function Home() {
           <div className='left'>
 
             <h1>Welcome to Habesha Store</h1>
-            <p>Buy what you want from habesha store, evry product on this platfrom has 50% discount.</p>
+            <p>Buy what you want from habesha store, every product on this platfrom has 50% discount.</p>
 
             <p>Sell your products on habesha store we will take care of shipping .</p>
 

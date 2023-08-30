@@ -1,14 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './register.css'
 import axios from "axios";
+import { AuthContext } from '../../contexts/AllContext';
+import { useNavigate } from 'react-router-dom';
+import { CircularProgress } from '@mui/material';
 
 function Register() {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [loading,setLoading]= useState(false)
 
+    const navigate = useNavigate()
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const {authUser,setAuthUser} = useContext(AuthContext)
 
     const handleNameChange = (e)=>{
       e.preventDefault()
@@ -32,7 +38,7 @@ function Register() {
         setConfirmPassword(e.target.value)
       }
     const handleSubmit = async()=>{
-      
+      setLoading(true)
         if(!name || !email || !password){
             alert("Please Enter all fields")
             console.log("abort Registration")
@@ -47,15 +53,20 @@ function Register() {
         console.log(name)
         console.log(email)
         axios
-        .post("http://localhost:8080/register", {
-          name: name,
+        .post("http://localhost:8080/user/register", {
+          username: name,
           email: email,
           password: password
         }).then((response) => {
            console.log(response.data)
-           alert("You have registered")
+           setLoading(false)
+          //  alert("You have registered")
+           
+             navigate('/login')
           }).catch(error => {
             console.log(error);
+            setLoading(false)
+
             alert(error.message)
           })
           console.log("end of register")
@@ -84,7 +95,7 @@ function Register() {
            <input className='input_filed' type="password" id='password' onChange={handleConfirmPasswordChange} placeholder='password' />
             </div>
 
-             <input type="submit" value="Register" onClick={handleSubmit} />
+            <button onClick={handleSubmit} className='submit_button'>{loading?<CircularProgress/>:"Register"}</button>
            </div>
         </div>
      

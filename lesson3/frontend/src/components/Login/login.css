@@ -1,0 +1,40 @@
+.register_container{
+    max-width: 80%;
+    margin: 0 auto;
+}
+.register_wrapper{
+    padding-top: 80px;
+    display: flex;
+    height: 100%;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+
+}
+.register_title{
+    display: block;
+    color: var(--black1);
+    margin-bottom: 40px;
+    text-align: center;
+}
+.register_fields label{
+   display: block;
+   font-size: 18px;
+   margin-bottom: 10px;
+}
+ 
+.register_fields input{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.submit_button{
+    width: 300px;
+    height: 45px;
+    border-radius: 10px;
+    margin-bottom: 20px
+}
+.register_fields input[type="submit"]{
+   margin-top: 40px;
+}
